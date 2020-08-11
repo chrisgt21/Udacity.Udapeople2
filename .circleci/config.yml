@@ -17,11 +17,8 @@ jobs:
       - checkout
       - run:
           name: Change directory to backend 
-          command: |
+          command: |-
             cd backend/
-      - run:
-          name: List directory
-          command: |
             ls
       - run: 
           name: Install packages
