@@ -27,7 +27,7 @@ jobs:
             npm run lint
   build-frontend:
     docker:
-      - image: circli/node:13.8.0
+      - image: circeli/node:13.8.0
     steps:
       - checkout
       - run:
