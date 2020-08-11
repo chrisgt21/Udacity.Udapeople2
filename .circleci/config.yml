@@ -15,6 +15,10 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
+      - run:
+          name: Change directory to frontend 
+          command: |
+            cd frontend
       - run: 
           name: Install packages
           command: |
