@@ -36,11 +36,11 @@ jobs:
             cd backend/
             npm test
           environment:
-            JEST_JUNIT_OUTPUT_DIR: ~/reports/backend/
+            JEST_JUNIT_OUTPUT_DIR: ./reports/backend/
       - store_test_results:
-          path: ~/reports/backend
+          path: ./reports/backend/
       - store_artifacts:
-          path: ~/reports/backend
+          path: ./reports/backend/
   build-frontend:
     docker:
       - image: circleci/node:13.8.0
