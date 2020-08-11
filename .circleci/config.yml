@@ -31,8 +31,8 @@ jobs:
       - run:
           name: Test code
           command: |-
-            mkdir ~/reports
-            mkdir ~/reports/backend
+            mkdir ./reports
+            mkdir ./reports/backend
             cd backend/
             npm test
           environment:
