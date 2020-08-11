@@ -19,6 +19,10 @@ jobs:
           name: Change directory to backend 
           command: |
             cd backend
+      - run:
+          name: List directory
+          command: |
+            ls
       - run: 
           name: Install packages
           command: |
