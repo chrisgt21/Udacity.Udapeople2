@@ -33,7 +33,7 @@ jobs:
             cd backend/
             npm test
           environment:
-            JEST_JUNIT_OUTPUT_DIR: ./reports/backend/
+            JEST_JUNIT_OUTPUT_DIR: ~/reports/backend/
       - store_test_results:
           path: ~/reports/backend
       - store_artifacts:
