@@ -25,6 +25,21 @@ jobs:
           command: |-
             cd backend/
             npm run lint
+  build-frontend:
+    docker:
+      - image: circli/node:13.8.0
+    steps:
+      - checkout
+      - run:
+          name: Install packages
+          command: |-
+            cd frontend/
+            npm i
+      - run:
+          name: Lint code
+          command: |-
+            cd frontend/
+            npm run lint
 
 workflows:
   default:
@@ -33,3 +48,6 @@ workflows:
       - build-backend:
           requires:
             - hello-world
+      - build-frontend:
+          requires:
+            - build-backend
