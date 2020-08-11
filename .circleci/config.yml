@@ -31,6 +31,8 @@ jobs:
             mkdir ~/backend-test-results
             cd backend/
             npm test
+      - store_test_results:
+          path: ~/backend-test-results
       - store_artifacts:
           path: ~/backend-test-results
   build-frontend:
@@ -54,11 +56,13 @@ jobs:
             mkdir ~/frontend-test-results
             cd frontend/
             npm test
-      - store_artifacts:
+      - store_test_results:
           path: ~/frontend-test-results
+      - store_artifacts:
+          path: ~/frotend-test-results
 
 
-          
+
 workflows:
   default:
     jobs:
