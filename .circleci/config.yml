@@ -21,11 +21,6 @@ jobs:
             cd backend/
             npm i
       - run:
-          name: Fix code
-          command: |-
-            cd backend/
-            tslint -p tsconfig.json -c tslint.json --fix
-      - run:
           name: Lint code
           command: |-
             cd backend/
