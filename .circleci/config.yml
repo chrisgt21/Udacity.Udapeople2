@@ -28,13 +28,15 @@ jobs:
       - run:
           name: Test code
           command: |-
-            mkdir ~/backend-test-results
+            mkdir ~/reports/backend
             cd backend/
             npm test
+          environment:
+            JEST_JUNIT_OUTPUT_DIR: ./reports/backend/
       - store_test_results:
-          path: ~/backend-test-results
+          path: ~/reports/backend
       - store_artifacts:
-          path: ~/backend-test-results
+          path: ~/reports/backend
   build-frontend:
     docker:
       - image: circleci/node:13.8.0
@@ -59,7 +61,7 @@ jobs:
       - store_test_results:
           path: ~/frontend-test-results
       - store_artifacts:
-          path: ~/frotend-test-results
+          path: ~/frontend-test-results
 
 
 
