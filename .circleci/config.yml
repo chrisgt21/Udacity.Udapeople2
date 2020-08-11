@@ -22,11 +22,13 @@ jobs:
             ls
       - run: 
           name: Install packages
-          command: |
+          command: |-
+            cd backend/
             npm i
       - run:
           name: Lint code
-          command: |
+          command: |-
+            cd backend/
             npm run lint
 
 workflows:
