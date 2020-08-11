@@ -18,7 +18,7 @@ jobs:
       - run:
           name: Change directory to backend 
           command: |
-            cd backend
+            cd backend/
       - run:
           name: List directory
           command: |
