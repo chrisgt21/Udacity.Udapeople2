@@ -26,7 +26,6 @@ jobs:
             cd backend/
             npm run lint
 
-
       - run:
           name: Install JUnit coverage reporter
           command: yarn add --dev jest-junit
@@ -37,8 +36,10 @@ jobs:
             #mkdir ~/reports/backend
             cd backend/
             npm test
+            ls
           environment:
             JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
+            JEST_JUNIT_OUTPUT_NAME: report.xml
       - store_test_results:
           path: ./reports/junit/
       - store_artifacts:
