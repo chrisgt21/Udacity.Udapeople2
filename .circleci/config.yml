@@ -44,7 +44,9 @@ jobs:
       - store_artifacts:
           path: ./backend/reports/junit/report.xml
 
-
+      - run:
+          name: Analyze code
+          command: npm audit --audit-level=critical
 
 
 
