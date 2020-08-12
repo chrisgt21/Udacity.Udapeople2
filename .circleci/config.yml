@@ -50,7 +50,9 @@ jobs:
 
       - run:
           name: Analyze code
-          command: npm audit --audit-level=critical
+          command: |-
+            cd backend/
+            npm audit --audit-level=critical
 
 
 
