@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/chrisgt21/Udacity.Udapeople/issues"
   },
-  "homepage": "https://github.com/chrisgt21/Udacity.Udapeople#readme"
+  "homepage": "https://github.com/chrisgt21/Udacity.Udapeople#readme",
+  "devDependencies": {
+    "jest": "^26.3.0",
+    "jest-junit": "^11.1.0"
+  }
 }

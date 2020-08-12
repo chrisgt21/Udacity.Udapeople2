@@ -25,12 +25,16 @@ jobs:
           command: |-
             cd backend/
             npm run lint
-
-
-
       - run:
-          name: Install JUnit coverage reporter
-          command: yarn add --dev jest-junit
+          name: JUnit
+          command: |-
+            npm i --save-dev jest
+            npm i --save-dev jest-junit
+
+
+      #- run:
+      #    name: Install JUnit coverage reporter
+      #    command: yarn add --dev jest-junit
       - run:
           name: Test code
           command: |-
