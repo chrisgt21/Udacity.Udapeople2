@@ -27,7 +27,7 @@ jobs:
             npm run lint
 
 
-            
+
       - run:
           name: Install JUnit coverage reporter
           command: yarn add --dev jest-junit
@@ -46,6 +46,13 @@ jobs:
           path: ./reports/junit/
       - store_artifacts:
           path: ./reports/junit/
+      - run:
+          name: Check reports folder
+          command: |-
+            cd reports
+            ls
+            cd junit
+            ls
 
 
 
