@@ -38,11 +38,11 @@ jobs:
             #mkdir ~/reports/backend
             cd backend/
             npm test
-            ls
-            cd ./reports/
-            ls
-            cd ./reports/junit/
-            ls
+            ls -l
+            cd reports/
+            ls -l
+            cd junit/
+            ls -l
           environment:
             JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
             JEST_JUNIT_OUTPUT_NAME: report.xml
