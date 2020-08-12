@@ -43,13 +43,14 @@ jobs:
             ls -l
             cd junit/
             ls -l
+            pwd
           environment:
             JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
             JEST_JUNIT_OUTPUT_NAME: report.xml
       - store_test_results:
-          path: ./reports/junit/report.xml
+          path: ./backend/reports/junit/report.xml
       - store_artifacts:
-          path: ./reports/junit/report.xml
+          path: ./backend/reports/junit/report.xml
 
 
 
