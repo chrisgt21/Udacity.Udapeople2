@@ -34,21 +34,13 @@ jobs:
       - run:
           name: Test code
           command: |-
-            #mkdir ~/reports
-            #mkdir ~/reports/backend
             cd backend/
             npm test
-            ls -l
-            cd reports/
-            ls -l
-            cd junit/
-            ls -l
-            pwd
           environment:
             JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
             JEST_JUNIT_OUTPUT_NAME: report.xml
       - store_test_results:
-          path: ./backend/reports/junit/report.xml
+          path: ./backend/reports/junit/
       - store_artifacts:
           path: ./backend/reports/junit/report.xml
 
