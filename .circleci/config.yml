@@ -25,22 +25,30 @@ jobs:
           command: |-
             cd backend/
             npm run lint
+
+
       - run:
           name: Install JUnit coverage reporter
           command: yarn add --dev jest-junit
       - run:
           name: Test code
           command: |-
-            mkdir ./reports
-            mkdir ./reports/backend
+            #mkdir ~/reports
+            #mkdir ~/reports/backend
             cd backend/
             npm test
           environment:
-            JEST_JUNIT_OUTPUT_DIR: ./reports/backend/
+            JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
       - store_test_results:
-          path: ./reports/backend/
+          path: ./reports/junit/
       - store_artifacts:
-          path: ./reports/backend/
+          path: ./reports/junit/
+
+
+
+
+
+
   build-frontend:
     docker:
       - image: circleci/node:13.8.0
