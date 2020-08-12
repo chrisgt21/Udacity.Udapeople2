@@ -49,9 +49,9 @@ jobs:
       - run:
           name: Check reports folder
           command: |-
-            cd reports
+            cd ./reports/
             ls
-            cd junit
+            cd ./reports/junit/
             ls
 
 
