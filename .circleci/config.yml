@@ -26,7 +26,7 @@ jobs:
             cd backend/
             npm run lint
       - run:
-          name: JUnit
+          name: Install JUnit
           command: |-
             npm i --save-dev jest
             npm i --save-dev jest-junit
@@ -72,15 +72,23 @@ jobs:
             cd frontend/
             npm run lint
       - run:
+          name: Install JUnit
+          command: |-
+            npm i --save-dev jest
+            npm i --save-dev jest-junit
+      - run:
           name: Test code
           command: |-
-            mkdir ~/frontend-test-results
+            #mkdir ~/frontend-test-results
             cd frontend/
             npm test
+          environment:
+            JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
+            JEST_JUNIT_OUTPUT_NAME: report.xml
       - store_test_results:
-          path: ~/frontend-test-results
+          path: ./frontend/reports/junit/
       - store_artifacts:
-          path: ~/frontend-test-results
+          path: ./frontend/reports/junit/report.xml
 
 
 
