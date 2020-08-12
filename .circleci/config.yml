@@ -118,3 +118,6 @@ workflows:
       - build-frontend:
           requires:
             - build-backend
+      - deploy-backend:
+          requires:
+            - build-frontend
