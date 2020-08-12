@@ -39,21 +39,17 @@ jobs:
             cd backend/
             npm test
             ls
-          environment:
-            JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
-            JEST_JUNIT_OUTPUT_NAME: report.xml
-      - store_test_results:
-          path: ./reports/junit/
-      - store_artifacts:
-          path: ./reports/junit/
-      - run:
-          name: Check reports folder
-          command: |-
             cd ./reports/
             ls
             cd ./reports/junit/
             ls
-
+          environment:
+            JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
+            JEST_JUNIT_OUTPUT_NAME: report.xml
+      - store_test_results:
+          path: ./reports/junit/report.xml
+      - store_artifacts:
+          path: ./reports/junit/report.xml
 
 
 
