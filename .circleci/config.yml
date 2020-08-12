@@ -89,6 +89,11 @@ jobs:
           path: ./frontend/reports/junit/
       - store_artifacts:
           path: ./frontend/reports/junit/report.xml
+      - run:
+          name: Analyze code
+          command: |-
+            cd frontend/
+            npm audit --audit-level=critical
 
 
 
