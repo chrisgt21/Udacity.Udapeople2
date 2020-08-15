@@ -106,6 +106,7 @@ jobs:
               --template-file .circleci/files/backend.yml \
               --stack-name "udapeople-backend-${CIRCLE_WORKFLOW_ID:0:7}" \
               --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}" \
+              --parameter-overrides SecurityGroup="sg-ecd039a4" \
               --tags project=udapeople \
               --region us-east-1
 
